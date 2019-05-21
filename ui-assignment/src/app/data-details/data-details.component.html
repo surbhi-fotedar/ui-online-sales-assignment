@@ -1,58 +1,58 @@
-<div>
-    <img src="../../assets/osLogo.png" alt="" class="logo"> 
+<div *ngIf="tableData">
+  <img src="../../assets/osLogo.png" alt="" class="logo">
   <mat-card class="dataBody">
-    <table mat-table [dataSource]="dataSource">
-  
+    <table mat-table [dataSource]="dataSource" class="table-bordered text-center">
+
       <!-- Creation Date Column -->
       <ng-container matColumnDef="creationDate">
         <th mat-header-cell *matHeaderCellDef> Creation Date </th>
         <td mat-cell *matCellDef="let element"> {{ element.creationDate | date: 'medium' }} </td>
       </ng-container>
-  
+
       <!-- Last Update Column -->
       <ng-container matColumnDef="lastUpdate">
         <th mat-header-cell *matHeaderCellDef> Last Update </th>
         <td mat-cell *matCellDef="let element"> {{ element.lastUpdate | date: 'medium' }} </td>
       </ng-container>
-  
+
       <!-- Type Column -->
       <ng-container matColumnDef="type">
         <th mat-header-cell *matHeaderCellDef> Type </th>
         <td mat-cell *matCellDef="let element"> {{element.type}} </td>
       </ng-container>
-  
+
       <!-- Status Column -->
       <ng-container matColumnDef="status">
         <th mat-header-cell *matHeaderCellDef> Status </th>
         <td mat-cell *matCellDef="let element"> {{element.status}} </td>
       </ng-container>
-  
+
       <!-- Message Column -->
       <ng-container matColumnDef="message">
         <th mat-header-cell *matHeaderCellDef> Message </th>
         <td mat-cell *matCellDef="let element"> {{element.message}} </td>
       </ng-container>
-  
+
       <!-- Detailed Message Column -->
       <ng-container matColumnDef="detailedMessage">
         <th mat-header-cell *matHeaderCellDef> Detailed Message </th>
-        <td mat-cell *matCellDef="let element"> 
-            <button mat-raised-button color="primary" [mdePopoverTriggerFor]="viewPopover" mdePopoverTriggerOn="click">
-              View
-            </button>
+        <td mat-cell *matCellDef="let element">
+          <button mat-raised-button color="primary" [mdePopoverTriggerFor]="viewPopover" mdePopoverTriggerOn="click">
+            View
+          </button>
           <mde-popover #viewPopover="mdePopover" [mdePopoverOverlapTrigger]="false" [mdePopoverCloseOnClick]="false">
-              <mat-card class="messageCard">
-                <mat-card-content>
-                   {{ element.metadata.rollUpMessage }} 
-                </mat-card-content>
-              </mat-card>
-            </mde-popover>
+            <mat-card class="messageCard">
+              <mat-card-content>
+                {{ element.metadata.rollUpMessage }}
+              </mat-card-content>
+            </mat-card>
+          </mde-popover>
         </td>
       </ng-container>
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
-    <mat-paginator #scheduledOrdersPaginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
   </mat-card>
   <app-data-summary></app-data-summary>
 </div>

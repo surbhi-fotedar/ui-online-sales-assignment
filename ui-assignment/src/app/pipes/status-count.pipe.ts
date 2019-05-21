@@ -7,7 +7,7 @@ export class StatusCountPipe implements PipeTransform {
   transform(dataArray: any[], statusName: string): number {
     let count = 0;
     dataArray.forEach((data) => {
-      if(data.status === statusName) {
+      if (data.status === statusName) {
         ++count;
       }
     });

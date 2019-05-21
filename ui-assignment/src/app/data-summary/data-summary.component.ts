@@ -10,14 +10,14 @@ export class DataSummaryComponent implements OnInit {
 
   tableSource: any;
   dataSource = [
-    { statusName: 'UNSEEN'},
-    { statusName: 'ACTED'},
-    { statusName: 'REJECTED'},
-    { statusName: 'FAIL_TO_ACT'}
+    { statusName: 'UNSEEN' },
+    { statusName: 'ACTED' },
+    { statusName: 'REJECTED' },
+    { statusName: 'FAIL_TO_ACT' }
   ];
 
-  constructor(private apiService: ApiService) {}
-    
+  constructor(private apiService: ApiService) { }
+
   ngOnInit() {
     this.getData();
   }
