@@ -1,0 +1,26 @@
+table {
+    width: 100%;
+  }
+
+th {
+  font-size: 15px;
+  font-weight: bolder;
+}
+
+tr:nth-child(even) {background-color: #f2f2f2;}
+
+.messageCard {
+    max-width: 300px;
+    background-color: #FAFAFA;
+}
+
+.logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+}
+
+.dataBody {
+  background-color: #FAFAFA;
+}

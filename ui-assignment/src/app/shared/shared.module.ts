@@ -32,6 +32,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { MdePopoverModule } from '@material-extended/mde';
+
 @NgModule({
   declarations: [],
   imports: [
@@ -67,7 +69,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     MatSnackBarModule,
     MatTableModule,
     MatSortModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MdePopoverModule
   ],
   exports: [
     BrowserAnimationsModule,
@@ -101,7 +104,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     MatSnackBarModule,
     MatTableModule,
     MatSortModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MdePopoverModule
   ]
 })
 export class SharedModule { }
